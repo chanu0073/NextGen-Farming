@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Produce Subscription</title>
+  <style>
+    /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+button {
+  background-color: #ff5722;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+section {
+  padding: 2rem;
+}
+
+#how-it-works ol {
+  list-style-position: inside;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label, input, select, textarea, button {
+  margin-bottom: 1rem;
+}
+
+input, select, textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>NextGen Farming</h1>
+    <h2>Fresh Produce Delivered to Your Door</h2>
+    <p>Enjoy fresh, organic produce with the convenience of home delivery and the quality of local farming.</p>
+    <button onclick="scrollToSignUp()">Sign Up for Freshness</button>
+  </header>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <ol>
+      <li><strong>Sign-Up:</strong> Choose your preferred items and delivery frequency.</li>
+      <li><strong>Order Selection:</strong> Customize your order with fresh, seasonal options.</li>
+      <li><strong>Order Processing:</strong> We plan our harvest to ensure peak freshness.</li>
+      <li><strong>Harvest & Packaging:</strong> Freshly harvested, eco-friendly packed produce.</li>
+      <li><strong>Delivery:</strong> Straight to your doorstep or local pick-up spots.</li>
+      <li><strong>Enjoy Freshness:</strong> Experience the best quality of local farming.</li>
+      <li><strong>Feedback Loop:</strong> Share feedback to help us improve.</li>
+      <li><strong>Community Engagement:</strong> Join events to learn more about sustainable farming.</li>
+    </ol>
+  </section>
+
+  <!-- Sign-Up Section -->
+  <section id="sign-up">
+    <h2>Sign Up for Your Fresh Produce Subscription</h2>
+    <form id="signUpForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="delivery">Delivery Frequency:</label>
+      <select id="delivery" name="delivery">
+        <option value="weekly">Weekly</option>
+        <option value="bi-weekly">Bi-Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+
+      <label for="preferences">Produce Preferences:</label>
+      <textarea id="preferences" name="preferences" rows="3" placeholder="Enter your favorite produce here..."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Fresh Produce Subscription Service. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll to Sign-Up Section
+function scrollToSignUp() {
+  document.getElementById("sign-up").scrollIntoView({ behavior: "smooth" });
+}
+
+// Form Submission Handler
+document.getElementById("signUpForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  // Collect form data (in real case, this would be sent to a server)
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const delivery = document.getElementById("delivery").value;
+  const preferences = document.getElementById("preferences").value;
+
+  // Display a simple confirmation message (could be a popup or redirect to a confirmation page)
+  alert("Thank you, "+name+"! Your subscription is set to "+delivery+" delivery.");
+  
+  // Clear the form (optional)
+  document.getElementById("signUpForm").reset();
+});
+  </script>
+</body>
+</html>
